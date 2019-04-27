@@ -42,6 +42,13 @@ console.log(consume("Mary","Poppins", greeting)); // Hello Mary Poppins, nice to
 
 // Explanation: 
 
+/* In JavaScript functions have access to the context outside of the function,
+ * as long as it is up the scope chain, but never have access to the context down the scope
+ * chain. 
+ *
+ * nestedfunction() can access the varaiable `internal` because it is up the scope
+ * chain from nestedfunction().
+ */
 
 const external = "I'm outside the function";
 
