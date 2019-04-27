@@ -74,6 +74,29 @@ const graduates = [{"id":1,"first_name":"Cynde","university":"Missouri Southern 
 
 Once you have the new array created, sort the universities alphabetically and log the result. */
 const universities = [];
+
+for(let i = 0; i < graduates.length; i++) {
+  universities.push(graduates[i].university);
+}
+
+function bubbleSort(arr) {
+  let sorted = false;
+
+  while(!sorted) {
+    sorted = true;
+    for(let i = 0; i < arr.length; i++) {
+      if(arr[i] > arr[i + 1]) {
+        sorted = false;
+        let temp = arr[i];
+        arr[i] = arr[i + 1];
+        arr[i + 1] = temp;
+      }
+    }
+  }
+}
+
+bubbleSort(universities);
+
 console.log(universities)
 
 /* Request 2: Create a new array called contactInfo that contains both first name and email of each student. 
