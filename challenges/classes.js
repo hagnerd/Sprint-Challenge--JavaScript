@@ -29,26 +29,20 @@ console.log(cuboid.surfaceArea()); // 130
 
 class CubeMaker extends CuboidMaker {
   constructor(attrs) {
-    super(attrs);
-    this.measurement = attrs.measurement;
+    super({ length: attrs.side, width: attrs.side, height: attrs.side });
   }
 
   volume() {
-    let volume = this.length * this.width * this.height;
-    return `${volume}${this.measurement}^2`;
+    return this.length ** 3
   }
 
   surfaceArea() {
-    let surfaceArea = 2 * (this.length * this.width + this.width * this.height + this.height * this.length);
-    return `${surfaceArea}${this.measurement}^3`;
+    return 6 * (this.length ** 2)
   }
 }
 
 const cube = new CubeMaker({
-  length: 5,
-  width: 5,
-  height: 5,
-  measurement: 'cm',
+  side: 5,
 });
 
 console.log(cube.volume());
